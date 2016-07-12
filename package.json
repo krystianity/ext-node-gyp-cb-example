@@ -1,0 +1,14 @@
+{
+  "name": "callback-stuff",
+  "version": "0.0.1",
+  "description": "Node.js Addons Example",
+  "main": "src/addon.js",
+  "scripts": {
+	"start": "node src/addon.js"
+  },
+  "private": true,
+  "gypfile": true,
+  "dependencies": {
+    "bindings": "~1.2.1"
+  }
+}

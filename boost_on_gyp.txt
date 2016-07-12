@@ -1,0 +1,31 @@
+{
+  "variables": {
+    "boost_root%": "/path/to/boost"
+  },
+  "targets": [
+    {
+      "target_name": "addon",
+      "sources": [ "addon.cc", "test.cc" ],
+      "include_dirs": [
+        "<@(boost_root)",
+      ],
+      "link_settings": {
+        "libraries": [
+          "-lboost_program_options",
+          "-lboost_log",
+        ],
+        "ldflags": [
+            "-L<@(boost_root)/stage/lib",
+            "-Wl,-rpath,<@(boost_root)/stage/lib",
+        ]
+      },
+      "cflags": [
+        "-std=c++11"
+      ],
+      "cflags_cc!": [
+        "-fno-rtti",
+        "-fno-exceptions"
+      ]
+    }
+  ]
+}
